@@ -1,0 +1,8 @@
+netsh wlan show all
+
+4ca79b62
+
+c29f057625
+c2:9f:05:76:26:ac
+
+netstat -a
