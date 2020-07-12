@@ -3,7 +3,7 @@ import socket
 mysock=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 mysock.connect(('data.pr4e.org',80))
 
-cmd='GET http://data.pr4e.org/words.txt HTTP/1.0\r\n\r\n'.encode()
+cmd='GET http://data.pr4e.org/words.txt HTTP/1.0\r\n\r\n'.encode()  # here encodes() converts into bytes
 mysock.send(cmd)
 
 # <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
@@ -17,10 +17,10 @@ mysock.send(cmd)
 # </body></html>
 
 while True:
-    data=mysock.recv(512)
+    data=mysock.recv(512) # here the data is bytes 
     if(len(data)<1):
         break
-    print(data.decode())
+    print(data.decode()) # Here the data is in unicode 
 mysock.close()
 
 
